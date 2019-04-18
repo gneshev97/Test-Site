@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("https://smokevote.de/wp-content/uploads/2015/10/Wallpaper-BroContraG-sexy2-zb1-1920x1080.jpg");
+  background: cover;
+  
+}
+
+* {
+    box-sizing: border-box;
+}
+h2{
+	text-align: center;
+	color: white;
+	margin-bottom: 10px;
+	font-size: 30px;
+	opacity: 0.6;
+	position: top;
+	
+}
+
+
+
+/* Style inputs */
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+	opacity: 0.5;
+}
+
+input[type=submit] {
+    background-color: black;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+	font-size: 15px;
+}
+
+input[type=submit]:hover {
+    background-color: black;
+}
+
+/* Style the container/contact section */
+.container {
+    border-radius: 1px;
+    background-color: none;
+    padding: 5px;
+	padding-top: 50px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+    color: white;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+ul{
+	list-style-type: none;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	background-color: none;
+	
+}
+
+li{
+	font-weight: 400;
+	float: left;
+	font-size: 20px;
+	margin-left: 0;
+	padding-right: 30px;
+	opacity: 0.7;
+	
+}
+li a{
+	color: white;
+	text-decoration: none;
+	padding: 14px 21px;
+	text-align: left;
+	display: block;
+	
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    	background-color: #404040;
+
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: none;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999;
+    position: absolute;
+    background-color: rgba(0,0,0, .7);
+}
+.nav { position: relative; z-index: 999; }
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+</head>
+<body>
+<header class="nav">
+<ul>
+	<li><a href="./index.html">SHISHA</a></li>
+	<li class="active"><a href="./tabak.html">TABAK</a></li>
+	<li class="dropdown"><a href="javascript:void(0)" class="dropbtn">BAR'S</a>
+	<div class="dropdown-content">
+	<a href="https://barnargile.com/" target="_blank">Bar Nargile</a>
+	<a href="https://www.evensi.com/page/tabu-shisha-bar/10004321136" target="_blank">Tabu</a>
+	<a href="https://www.facebook.com/Black-Hawk-Nargile-Dinner-433330020335101/" target="_blank">Black Hawk</a></li>
+	<li><a href="#">HISTORY</a></li>
+	<li><a href="#">INTERESTING</a></li>
+	<li><a href="./contact.html">CONTACT</a></li>
+</ul>
+</header>
+
+<div class="container">
+  <div style="text-align:center">
+    <h2>Don't hesitate to contact us</h2>
+    
+  </div>
+  <div class="row">
+    <div class="column">
+      <div id="map" style="width:100%;height:500px"></div>
+    </div>
+    <div class="column">
+      <form action="mailto:georgi.neshev@gmail.com" method="post">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+	<option value="de">Germany</option>
+	<option value="bg">Bulgaria</option>
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+	<option value="fe">France</option>
+	<option value="be">Belgium</option>
+	<option value="en">England</option>
+	<option value="sch">Switzerland</option>
+	<option value="au">Austria</option>
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+// Initialize google maps
+function myMap() {
+  var myCenter = new google.maps.LatLng(42.655445, 23.291799);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 12};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuzetntj1efcNqI6akjmUfo7YAEgsPsv0&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>
+

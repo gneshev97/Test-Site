@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="tabakcss.css">
+<title>Tabak Shop</title>
+</head>
+<body>
+
+<header class="nav">
+<ul>
+	<li><a href="./index.html">SHISHA</a></li>
+	<li class="active"><a href="./tabak.html">TABAK</a></li>
+	<li class="dropdown"><a href="javascript:void(0)" class="dropbtn">BAR'S</a>
+	<div class="dropdown-content">
+	<a href="https://barnargile.com/" target="_blank">Bar Nargile</a>
+	<a href="https://www.evensi.com/page/tabu-shisha-bar/10004321136" target="_blank">Tabu</a>
+	<a href="https://www.facebook.com/Black-Hawk-Nargile-Dinner-433330020335101/" target="_blank">Black Hawk</a></li>
+	<li><a href="#">HISTORY</a></li>
+	<li><a href="#">INTERESTING</a></li>
+	<li><a href="./contact.html">CONTACT</a></li>
+</ul>
+</header>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+
+<table id="table">
+<tr class="main">
+	<th style="width:30%;"><h2>Tabak Type</h2></th>
+	<th style="width:10%;"><h2>Quantity</h2></th>
+</tr>
+<tr>
+	<td><h3>Starbuzz</h3></td>
+	<td><h3>20</h3></td>
+</tr>
+<tr>
+	<td><h3>Aqua Mentha</h3></td>
+	<td><h3>15</h3></td>
+</tr>
+<tr>
+	<td><h3>Al Fakher</h3></td>
+	<td><h3>20</h3></td>
+</tr>
+<tr>
+	<td><h3>Start Now</h3></td>
+	<td><h3>50</h3></td>
+</tr>
+<tr>
+	<td><h3>Al Waha</h3></td>
+	<td><h3>30</h3></td>
+</tr>
+</table>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+
+<div id="back">
+<br><br><a href="./narga.html">Back To Main Page</a>
+</div>
+<a href="www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+<a href="https://www.google.bg/search?ei=7_lJW8CWIaea6ATP0rewDw&q=shisha+bars+sofia&oq=shisha+bars+sofia&gs_l=psy-ab.3..0i203k1j0i22i30k1l9.5807.7144.0.7300.11.11.0.0.0.0.156.955.5j4.9.0....0...1.1.64.psy-ab..2.9.955...0j35i39k1j0i67k1.0.tPVmBbIGMG8" target="_blank" class="fa fa-google"></a>
+<a href="https://www.instagram.com/shishakidz/" target="_blank" class="fa fa-instagram"></a>
+</body>
+</html>
